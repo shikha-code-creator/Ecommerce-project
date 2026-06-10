@@ -129,6 +129,6 @@ MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 LOGIN_REDIRECT_URL = "index" #add manually (to redirect the page from login to homepage)
 #LOGOUT_REDIRECT_URL = 'index' #add manually (to redirect the page from login to homepage)
 
-STRIPE_PUBLISHABLE_KEY = 'pk_test_51T6CXHEdhwjv235e1wUanfAlx5kFG5rohxC9kxko48UnNw6Gp2NOT9Oln0bjaNVXfznSLpoiFhbJUUeODTt60jTI00I4rl8T2v'
-STRIPE_SECRET_KEY = 'sk_test_51T6CXHEdhwjv235ekdYc5w5BFoLfbtEbnol4H1IZ6cu1ynE95dPLrrhRnXi29hiF5p5i5MGSyENyZUc7gyxTW3Pj00NGTyIxCs'
-STRIPE_ENDPOINT_SECRET = "whsec_11cf6443e345402c4bf7330e8aadeab9c9e1bbf231eef111afdd032d24f6b025"
+STRIPE_PUBLISHABLE_KEY = "YOUR_STRIPE_PUBLISHABLE_KEY"
+STRIPE_SECRET_KEY = "YOUR_STRIPE_SECRET_KEY"
+STRIPE_ENDPOINT_SECRET = "YOUR_STRIPE_ENDPOINT_SECRET"

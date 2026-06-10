@@ -1,0 +1,11 @@
+{% extends "registration./base.html" %}
+{% load static %}
+{% block content %}
+<!--<h3>Account Info.</h3>-->
+<form method="post" action="">
+  {% csrf_token%}
+  {{usrfrm.as_div}}
+  {{cstfrm.as_div}}
+  <input type="submit" value="Submit" name="btnsub"/>
+</form>
+{% endblock %}

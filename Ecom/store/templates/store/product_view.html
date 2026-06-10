@@ -1,0 +1,41 @@
+{% extends "store./base.html" %}
+{% load static %}
+{% block content %}
+
+<!--<h1>Product Detail</h1>-->
+<!--    <hr>-->
+<!--    -->
+<!--    <img src="{{ product.image.url }}" style="width: 300px;">-->
+<!--    <h2>{{ product.prdnam }}</h2>-->
+<!--    <p>Price: ${{ product.price }}</p>-->
+<!--    <p>Description: {{ product.description }}</p>-->
+<!--    -->
+<!--    <a href="{% url 'index' %}">Return to Shop</a>-->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ product.image.url }}" class="img-fluid rounded" alt="{{ product.prdnam }}" style="width: 100%; max-width: 500px;">
+        </div>
+
+        <div class="col-md-6">
+            <h1>{{ product.prdnam }}</h1>
+            <hr>
+            <h4 class="text-success">Price: ${{ product.price }}</h4>
+
+            <div class="mt-4">
+                <h5>Description:</h5>
+                <p class="text-muted">{{ product.description|default:"No description provided." }}</p>
+            </div>
+
+            <div class="mt-5">
+                <form method="post" action="{% url 'updatecart' %}">
+                    {% csrf_token %}
+                    <button class="btn btn-primary btn-lg" name="btn{{ product.id }}">Add to Cart</button>
+                    <a href="{% url 'index' %}" class="btn btn-outline-secondary btn-lg ms-2">Return to Shop</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

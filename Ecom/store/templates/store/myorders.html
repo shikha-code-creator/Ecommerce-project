@@ -1,0 +1,38 @@
+{% extends "store./base.html" %}
+{% load static %}
+{% block content %}
+
+<h3>My Orders</h3>
+
+<table class="table">
+
+<tr>
+<th>Product</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+
+{% for item in orderitems %}
+<tr>
+
+<td>
+<img src="{{ item.product.image.url }}" width="70">
+{{ item.product.prdnam }}
+</td>
+
+<td>{{ item.order.date_created }}</td>
+
+<td>
+{% if item.order.complete %}
+Completed
+{% else %}
+Pending
+{% endif %}
+</td>
+
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

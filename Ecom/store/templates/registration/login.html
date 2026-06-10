@@ -1,0 +1,12 @@
+{% extends "registration./base.html" %}
+{% load static %}
+{% block content %}
+
+<form method="post">
+  {% csrf_token %}
+  {{form.as_div}}
+  <input type="submit" value="Login">
+  <a href="{% url 'register' %}">New Registration </a>
+</form>
+
+{% endblock %}
